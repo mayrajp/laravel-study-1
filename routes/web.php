@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProviderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,15 +33,13 @@ Route::prefix('/app')->group(function (){
     
     Route::get('/clients', function () {
         return 'Clients';
-    })->name('app.clients');
+    })->name('app.client');
     
-    Route::get('/providers', function () {
-        return 'Providers';
-    })->name('app.providers');
-    
+    Route::get('/provider', [ProviderController::class, 'index'])->name('app.provider');
+
     Route::get('/products', function () {
-        return 'Providers';
-    })->name('app.products');
+        return 'produtos';
+    })->name('app.product');
 
 });
 
